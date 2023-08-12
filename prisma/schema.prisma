@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./data.db"
+}
+
+model Post {
+  id Int @id @default(autoincrement())
+  title String
+  shortTitle String?
+  slug String
+  content String
+  featured String?
+  seo_title String?
+  page_key String?
+  seo_description String?
+  language_id Int
+  parent_id Int?
+  created_at DateTime @default(now())
+  updated_at String
+  mainVersion_id Int?
+  bindings String?
+}
+
+model Lang {
+  id Int @id @default(autoincrement())
+  title String @unique
+  slug String
+  attr String
+  flag String?
+  menu_id Int?
+  banner_id Int?
+  sidebar_id Int?
+  buttons_id Int?
+}
+
+model Options {
+  id Int @id @default(autoincrement())
+  key String @unique
+  value String
+}
+
+
+model Menu {
+  id Int @id @default(autoincrement())
+  name String @unique
+  value String
+}
+
+model Banner {
+  id Int @id @default(autoincrement())
+  name String @unique
+  title String?
+  description String?
+  text_btn String?
+}
+
+model Sidebar {
+  id Int @id @default(autoincrement())
+  name String @unique
+  banner_title String?
+  banner_price String?
+  text_btn String?
+  top_one String?
+  top_two String?
+  top_three String?
+  bottom_one String?
+  bottom_two String?
+  bottom_three String?
+  bottom_four String?
+  bottom_five String?
+}
+
+model Buttons {
+  id Int @id @default(autoincrement())
+  name String @unique
+  btn_log String
+  btn_reg String
+  btn_download String?
+  btn_promo String?
+}
