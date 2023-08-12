@@ -1,0 +1,77 @@
+
+.burger {
+    display: none;
+    position: relative;
+}
+
+.mobileMenu {
+    position: fixed; 
+    top: 0; 
+    right:0%;
+    display: block; 
+    z-index: 5;
+    background: #205685;
+    width: 100%;  
+    max-width: 350px;
+    min-height: 100vh;
+    padding: 30px 20px;
+    transition: right 0.8s; 
+
+    .buttons {
+        display: block;
+        margin-top: 32px;
+
+        button {
+            display: block;
+            margin:0 auto 12px;
+            width: 50%;
+        }
+    }
+
+    &[hidden] {
+        right: -200%;
+    }
+
+    .close{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .mobileMenuLinks {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+    }
+}
+
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+    display: block;
+
+    &[hidden] {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .burger {
+        display: block;
+    }
+}

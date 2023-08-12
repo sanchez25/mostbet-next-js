@@ -1,0 +1,127 @@
+.footer{
+    padding: 30px 0 0 280px;
+    position: relative;
+    top: 120px;
+    background: var(--main-content);
+
+    .footerInner{
+        background: #003266;
+        border-radius: 15px 0 0 0;
+
+        .footerTop {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+
+            .footerEighteen {
+                font-size: 16px;
+                text-transform: uppercase;
+                border: 2px solid #09437f;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                color: var(--text-content);
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .footerDownload {
+            margin: 20px;
+            display: flex;
+
+            .headerTopDownloads {
+                padding: 0 13px;
+                margin: 0;
+
+                .text-download {
+                    padding: 10px 5px;
+                }
+
+                .download-android {
+                    margin-left: 20px;
+                }
+
+                .download-ios {
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        .copyright {
+            text-align: center;
+            padding-bottom: 15px;
+
+            span {
+                color: #fff;
+                font-size: 15px;
+            }
+        }
+
+    }
+
+    .scrollTop {
+        background: var(--color-btn-secondary);
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 60px;
+        right: 20px;
+        opacity:0;
+        cursor: pointer;
+        border-radius: 50%;
+        z-index: 5;
+    }
+
+    .scrollTop.pam_content {
+        opacity: 1;
+    }
+
+
+}
+
+.fixedButtons {
+    z-index: 4;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 6px 0;
+    background-color: var(--main-content);
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        button {
+            width: 48%;
+        }
+    }
+}
+
+@media (max-width: 1250px){
+    .fixedButtons { display: flex; }
+}
+
+@media (max-width: 1024px) {
+    .footer {
+        padding: 30px 0 52px 0;
+        top: 48px;
+
+        .footerInner {
+            border-radius: 0;
+        }
+    }
+}
+
+

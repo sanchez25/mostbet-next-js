@@ -1,0 +1,56 @@
+.footerBottom {
+  padding: 10px;
+  background-color: #04386e;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 15px;
+
+  .footerBottomItem {
+    margin: 5px;
+    height: 56px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .footerBottomItem.fifa {
+    width: 79px;
+    background-image: url(/fifa.svg);
+  }
+
+  .footerBottomItem.nhl {
+    width: 40px;
+    background-image: url(/nhl.svg);
+  }
+
+  .footerBottomItem.wta {
+    width: 57px;
+    background-image: url(/wta.svg);
+  }
+
+  .footerBottomItem.fiba {
+    width: 61px;
+    background-image: url(/fiba.svg);
+  }
+
+  .footerBottomItem.atp {
+    width: 49px;
+    background-image: url(/atp.svg);
+  }
+
+  .footerBottomItem.uefa {
+    width: 71px;
+    background-image: url(/uefa.svg);
+  }
+
+  .footerBottomItem.iihf {
+    width: 99px;
+    background-image: url(/iihf.svg);
+  }
+
+  .footerBottomItem.nba {
+    width: 68px;
+    background-image: url(/nba.svg);
+  }
+}

@@ -1,0 +1,37 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  padding: 25px 0 15px 0;
+  overflow-x: hidden;
+
+  a {
+    color: #333;
+    font-size: 14px;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+
+  .last {
+    position: relative;
+    margin-left: 10px;
+    font-size: 14px;
+  }
+
+  a:after {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background-image: url(/arrow-right.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    content: no-open-quote;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .breadcrumbs {
+    padding: 5px 0 0px 0;
+  }
+}

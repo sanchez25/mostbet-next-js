@@ -1,0 +1,213 @@
+@mixin before-item {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 10px;
+}
+@mixin btn-item {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    text-transform: uppercase;
+    width: 100%;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 60px;
+    transition: .2s;
+}
+
+.contentSidebar {
+    width: 280px;
+    padding: 20px 20px 0 20px;
+    position: fixed;
+    left: 0;
+    top: 120px;
+    bottom: 0;
+    z-index: 2;
+    overflow: hidden;
+
+    .contentSidebarTop {
+        border-radius: 15px 15px 0 0;
+        background-color: #003266;
+        margin-bottom: -24px;
+        padding-bottom: 30px;
+
+        .sidebarTopBonus {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 12px;
+            padding-top: 20px;
+            border-radius: 15px;
+            background-image: linear-gradient(180deg,#003266 90%,rgba(0,50,102,0));
+
+            &:before {
+                content: "";
+                display: block;
+                background-image: url(/sidebar-crown.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 87px;
+                height: 59px;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                top: -15px;
+            }
+
+            .sidebarTopBorder {
+                width: 100%;
+                text-align: center;
+                padding: 15px 25px 5px 25px;
+                background-image: url(/sidebar-border.svg);
+                background-repeat: no-repeat;
+                background-position: 50% 0;
+
+                .sidebarBorderTitle {
+                    display: block;
+                    color: var(--text-content);
+                    margin-top: 12px;
+                    padding: 0 12px;
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 1;
+                }
+
+                .sidebarBorderBonus {
+                    margin-top: 5px;
+                    padding: 0 8px;
+                    line-height: 1;
+                    color: var(--color-btn-primary);
+                    font-weight: 700;
+                    font-size: 30px;
+                    text-transform: uppercase;
+                }
+
+                .btn-sidebar {
+                    display: inline-block;
+                    border-radius: 30px;
+                    width: 126px;
+                    height: 40px;
+                    color: #fff;
+                    text-transform: uppercase;
+                    font-size: 18px;
+                    position: relative;
+                    transition: background 1s ease-out;
+                    margin-top: 7px;
+                    background-image: linear-gradient(0deg, #fa4d00 0, #fa5e00);
+                    box-shadow: 0 10px 30px rgba(250, 65, 0, 0.4);
+
+                    &:hover {
+                        background-image: linear-gradient(0deg,#fa5e00 0,#fa7c00);
+                        box-shadow: 0 20px 30px rgba(250,65,0,.4);
+                    }
+                }
+            }
+        }
+
+        .SidebarTopItems {
+
+            .btn-item {
+                @include btn-item;
+                border-top: 2px solid #043e7d;
+                color: var(--text-content);
+
+                &:hover {
+                    color: #1183d3;
+                }
+
+                &:first-child {
+                    color: var(--color-btn-primary);
+                }
+
+                &:first-child:before {
+                    @include before-item;
+                    background-image: url(/popular.svg);
+                }
+
+                &:nth-child(2):before {
+                    @include before-item;
+                    background-image: url(/new.svg);
+                }
+
+                &:last-child:before {
+                    @include before-item;
+                    background-image: url(/favourites.svg);
+                }
+            }
+        }
+    }
+
+    .contentSidebarBottom {
+        border-radius: 15px;
+        background-color: var(--text-content);
+        overflow: hidden;
+
+        .btn-item {
+            @include btn-item;
+            border-top: 2px solid #e8ecf1;
+
+            &:hover {
+                color: #1183d3;
+            }
+
+            &:nth-child(6) {
+                background-color: #e8ecf1;
+            }
+
+            &:last-child {
+                background-color: #e8ecf1;
+                border-top: 2px solid #fff;
+            }
+
+            &:first-child:before {
+                @include before-item;
+                background-image: url(/slots.svg);
+            }
+
+            &:nth-child(2):before {
+                @include before-item;
+                background-image: url(/roulette.svg);
+            }
+
+            &:nth-child(3):before {
+                @include before-item;
+                background-image: url(/cards.svg);
+            }
+
+            &:nth-child(4):before {
+                @include before-item;
+                background-image: url(/lotteries.svg);
+            }
+
+            &:nth-child(5):before {
+                @include before-item;
+                background-image: url(/jackpots.svg);
+            }
+
+            &:nth-child(6):before {
+                @include before-item;
+                background-image: url(/fast-games.svg);
+            }
+
+            &:last-child:before {
+                @include before-item;
+                background-image: url(/virtuals.svg);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    .contentSidebar {
+        display: none;
+    }
+
+}

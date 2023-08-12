@@ -1,0 +1,58 @@
+@mixin btn-app {
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  position: relative;
+}
+@mixin before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.headerTopDownloads {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  background-color: var(--btn-back);
+  padding: 5px;
+  margin: 5px 10px;
+
+  .text-download {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--text-content);
+    padding: 0 5px;
+  }
+
+  .download-android {
+    @include btn-app;
+
+    &:before {
+      @include before;
+      background-image: url(/android.svg);
+      transition: .3s;
+    }
+
+    &:hover:before {
+      background-image: url(/android-hover.svg);
+    }
+  }
+
+  .download-ios {
+    @include btn-app;
+
+    &:before {
+      @include before;
+      background-image: url(/apple.svg);
+      transition: .3s;
+    }
+
+    &:hover:before {
+      background-image: url(/apple-hover.svg);
+    }
+  }
+}

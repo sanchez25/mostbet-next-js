@@ -1,0 +1,44 @@
+.payment {
+  padding: 10px;
+  background-color: #04386e;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 20px;
+
+  .payment-item {
+    width: 120px;
+    margin: 5px;
+    height: 27px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .payment-item.mastercard {
+    width: 35px;
+    background-image: url(/mastercard.svg);
+  }
+
+  .payment-item.visa {
+    background-image: url(/visa.svg);
+  }
+
+  .payment-item.maestro {
+    width: 60px;
+    background-image: url(/maestro.svg);
+  }
+
+  .payment-item.webmoney {
+    background-image: url(/webmoney.svg);
+  }
+
+  .payment-item.ecopayz {
+    background-image: url(/ecopayz.svg);
+  }
+
+  .payment-item.bitcoin {
+    background-image: url(/bitcoin.svg);
+  }
+}

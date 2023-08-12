@@ -1,0 +1,256 @@
+@mixin button {
+    padding: 5px 35px; 
+    border-radius: 50px;
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0 10px;
+    color: var(--text-content);
+}
+@mixin before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 0;
+    background-color: var(--header);
+    background-image: linear-gradient(0deg, rgba(0, 50, 102, 0) 0, #003266 73%, #003266 98%);
+
+    .headerTop {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        width: 100%;
+        padding: 5px 10px;
+
+        .headerTopLinks {
+            display: flex;
+            align-items: center;
+
+            .access-btn {
+                display: flex;
+                align-items: center;
+                border-radius: 20px;
+                background-color: var(--btn-back);
+                padding: 5px;
+                margin: 5px 10px;
+                cursor: pointer;
+                position: relative;
+                transition: 0.3s;
+
+                &:before {
+                    @include before;
+                    margin: 5px;
+                    background-image: url(/access.svg);
+                }
+
+                &:hover {
+                    box-shadow: inset 0 0 0 1.5px #fff;
+                }
+            }
+
+            .langChoose {
+                border-radius: 20px;
+                background-color: var(--btn-back);
+                padding: 5px;
+                margin: 5px 10px;
+            }
+
+            .promo-btn {
+                display: flex;
+                align-items: center;
+                box-shadow: 0 11px 27px rgba(66, 140, 220, 0.63);
+                border-radius: 20px;
+                background-color: #428cdc;
+                background-image: linear-gradient(0deg,#428cdc 0,#0992af);
+                padding: 10px;
+                margin: 5px 10px;
+                transition: .3s;
+                font-size: 14px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: var(--text-content);
+                position: relative;
+
+                &:before {
+                    @include before;
+                    margin-right: 10px;
+                    background-image: url(/promo.svg);
+                }
+
+                &:hover {
+                    color: var(--color-btn-primary);
+                }
+
+                &:hover:before {
+                    background-image: url(/promo-hover.svg);
+                }
+            }
+        }
+    }
+
+    .headerBottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 10px;
+        align-items: center;
+
+        .headerBottomLogo {
+            position: relative;
+            margin: 5px 10px;
+            flex: 0 0 auto;
+
+            .ampLogo {
+                position: relative;
+
+                button {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            img {
+                width: 236px;
+                height: 100%;
+            }
+
+        }
+
+        .menu {
+            border-radius: 20px;
+            background-color: rgba(0, 49, 102, 0.5);
+            position: relative;
+            flex-grow: 1;
+            margin: 0 10px;
+            display: flex;
+            justify-content: center;
+
+            a {
+                font-size: 18px;
+                display: block;
+                line-height: 1.2;
+                padding: 10px 20px;
+                color: var(--text-content);
+                font-weight: 500;
+                text-transform: uppercase;
+                text-align: center;
+
+                &:hover {
+                    color: var(--color-btn-primary);
+                }
+
+                &.active {
+                    color: var(--color-btn-primary);
+                }
+
+            }
+
+        }
+
+        .langChoose.mobile {
+            display: none;
+        }
+    }
+
+}
+
+.buttons {
+
+    .logButton {
+        background-image: linear-gradient(0deg, #fa4d00 0, #fa5e00);
+        box-shadow: 0 10px 30px rgba(250, 65, 0, 0.4);
+        @include button;
+
+        &:hover {
+            background-image: linear-gradient(0deg,#fa5e00 0,#fa7c00);
+            box-shadow: 0 20px 30px rgba(250,65,0,.4);
+        }
+
+    }
+    .regButton {
+        background-image: linear-gradient(0deg, #428cdc 0, #509aea 97%, #509aea);
+        @include button;
+
+        &:hover {
+            background-image: linear-gradient(180deg,#428cdc 0,#509aea 97%,#509aea);
+        }
+
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .header {
+        background-color: var(--main-content);
+        background-image: unset;
+
+        .headerTop {
+            display: none;
+        }
+
+        .headerBottom {
+            padding: 0 5px;
+
+            .menu {
+                display: none;
+            }
+
+            .langChoose.mobile {
+                display: block;
+                border-radius: 20px;
+                background-color: var(--btn-back);
+                padding: 5px;
+                margin: 5px 10px;
+            }
+
+            .headerBottomLogo {
+
+                img {
+                    width: 150px;
+                }
+            }
+        }
+    }
+
+    .buttons {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .header {
+
+        .headerBottom {
+
+            .headerBottomLogo {
+
+                img {
+                    width: 140px;
+                }
+            }
+
+            .langChoose.mobile {
+
+                .choose {
+                    padding: 0 0 0 5px;
+
+                    span {
+                        padding: 0 5px 0 0px;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
