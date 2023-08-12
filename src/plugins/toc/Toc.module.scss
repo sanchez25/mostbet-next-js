@@ -1,0 +1,41 @@
+.wrapper {
+
+    .container {
+        width: 100%;
+
+        .item {
+            display: flex;
+            margin-bottom: 12px;
+            align-items: center;
+
+            .input {
+                width: 100%;
+                padding: 10px;
+                border: 1px #eee solid;
+                border-radius: 4px;
+
+                input {
+                    width: 100%;
+                }
+            }
+
+            .check {
+                margin-left: 12px;
+                width: 50%;
+
+                label { 
+                    font-size: 14px; 
+                    cursor: pointer;
+                }
+
+                input { 
+                    margin-right: 4px; 
+                    border: 1px #eee solid; 
+                    outline: none; 
+                }
+
+            }
+        }
+    }
+
+}
