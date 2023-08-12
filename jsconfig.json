@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "./build",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "exclude": [
+    "node_modues",
+    "src/pages/admin"
+  ]
+}
